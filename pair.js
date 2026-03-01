@@ -27,7 +27,7 @@ const {
 
 // ---------------- CONFIG ----------------
 
-const BOT_NAME_FANCY = '𝐕EᑎOᗰ 𝐌ᗪ V1-𝐌𝐈𝐍𝐈';
+const BOT_NAME_FANCY = '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈';
 
 const config = {
   AUTO_VIEW_STATUS: 'false',
@@ -37,17 +37,17 @@ const config = {
   PREFIX: '.',
   MAX_RETRIES: 3,
   GROUP_INVITE_LINK: 'https://chat.whatsapp.com/EekDsKzbgyfACsN1uO0Ehe?mode=gi_t',
-  RCD_IMAGE_PATH: 'https://i.ibb.co/MDhYXCbn/a14830664725.jpg',
+  RCD_IMAGE_PATH: 'https://files.catbox.moe/d6afvt.jpg',
   NEWSLETTER_JID: '120363427671810776@newsletter',
   OTP_EXPIRY: 300000,
   OWNER_NUMBER: process.env.OWNER_NUMBER || '94713047504',
-  CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbC1Gbe4yltWQdiNbf3p',
-  BOT_NAME: 'VENOM MD MINI BOT',
+  CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb7nfOX3bbUwsPm6Oe0w',
+  BOT_NAME: '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT',
   BOT_VERSION: '1.0.0V',
   OWNER_NAME: 'Gagana Anuhas',
-  IMAGE_PATH: 'https://i.ibb.co/MDhYXCbn/a14830664725.jpg',
-  BOT_FOOTER: '𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝗩𝗘𝗡𝗢𝗠-𝗠𝗗 𝐌𝐈𝐍𝐈 💥',
-  BUTTON_IMAGES: { ALIVE: 'https://i.ibb.co/MDhYXCbn/a14830664725.jpg' }
+  IMAGE_PATH: 'https://files.catbox.moe/d6afvt.jpg',
+  BOT_FOOTER: '𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈(Anuhas)💥',
+  BUTTON_IMAGES: { ALIVE: 'https://files.catbox.moe/d6afvt.jpg' }
 };
 
 // ---------------- MONGO SETUP ----------------
@@ -655,7 +655,7 @@ case 'gpt': {
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     // Load bot name from DB or default
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'QUEEN ASHA MINI BOT AI';
+    let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT AI';
 
     // Meta AI mention for quote
     const metaQuote = {
@@ -725,7 +725,7 @@ case 'gpt': {
         const messages = {
             noCity: "❗ *Please provide a city name!* \n📋 *Usage*: .weather [city name]",
             weather: (data) => `
-*💝 QUEEN Asha Weather Report 🌤*
+*💝 𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 Weather Report 🌤*
 
 *━🌍 ${data.name}, ${data.sys.country} 🌍━*
 
@@ -747,7 +747,7 @@ case 'gpt': {
 
 *🔽 Pressure*: ${data.main.pressure} hPa
 
-> 🚀 𝘗𝘖𝘞𝘌𝘙𝘌𝘋 𝘉𝘠 VENOM-MD MINI BOT V1
+> 🚀 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈
 `,
             cityNotFound: "🚫 *City not found!* \n🔍 Please check the spelling and try again.",
             error: "⚠️ *An error occurred!* \n🔄 Please try again later."
@@ -806,7 +806,7 @@ case 'aiimg2': {
         // 🔹 Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || 'VENOM-MD MINI BOT'
+        let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈'
         // 🔹 Fake contact with dynamic bot name
         const shonux = {
             key: {
@@ -921,7 +921,7 @@ END:VCARD`
 1. ⏳ Pair this code within 1 minute.
 2. 🚫 Do not share this code with anyone.
 3. 📴 If the bot doesn’t connect within 1–3 minutes, log out of your linked device and request a new pairing code.
-> > Queen Asha Mini `
+> > 𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 `
         }, { quoted: msg });
 
         await sleep(2000);
@@ -968,7 +968,7 @@ END:VCARD`
         console.log('Sending message to user...');
         await socket.sendMessage(sender, {
             text: formatMessage(
-                '🏏 NIKKA MD V5 MINI CEICKET NEWS🏏',
+                '🏏 𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 CEICKET NEWS🏏',
                 `📢 *${title}*\n\n` +
                 `🏆 *mark*: ${score}\n` +
                 `🎯 *to win*: ${to_win}\n` +
@@ -1029,7 +1029,7 @@ END:VCARD`
             caption: formatMessage(
                 '📰 VENOM-MD MINI BOT V5 නවතම පුවත් 📰',
                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date || 'තවම ලබාදීලා නැත'}\n🌐 *Link*: ${link}`,
-                'VENOM-MD MINI BOT V5'
+                '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT V1'
             )
         });
     } catch (error) {
@@ -1338,7 +1338,7 @@ case 'apk': {
         // ✅ Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || 'VENOM-MD MINI BOT'
+        let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT'
         // ✅ Fake Meta contact message
         const shonux = {
             key: {
@@ -1403,7 +1403,7 @@ END:VCARD`
         // Catch block Meta mention
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || 'NIKKA MINI BOT AI';
+        let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT AI';
 
         const shonux = {
             key: {
@@ -1440,7 +1440,7 @@ case 'xvdl': {
         // ✅ Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || 'VENOM-MD MINI BOT AI';
+        let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT AI';
 
         // ✅ Fake Meta contact message
         const shonux = {
@@ -1631,10 +1631,11 @@ case 'alive': {
     const text = `
 ╭─❀ 🤖 ${botName} ❀─╮
 │ 🌟 Status   : Online
-│ 👑 Owner   : ${config.OWNER_NAME || 'Kavindu • Ishan'}
+│ 👑 Owner   : ${config.OWNER_NAME || 'ɢᴀɢᴀɴᴀ ᴀɴᴜʜᴀꜱ'}
 │ ⏳ Uptime  : ${hours}h ${minutes}m ${seconds}s
 │ ☁️ Platform : ${process.env.PLATFORM || 'Heroku'}
 │ 🔗 Prefix  : ${config.PREFIX}
+| 💪 Special thank : {'ᴄʜᴀᴍᴏᴅ ᴅᴇᴠ(ɢᴏᴛᴜᴋᴏʟᴀʏᴀ ᴍᴅ)'}
 ╰─────────────❀
 
 ✨ *About ${botName}* ✨
@@ -1642,7 +1643,7 @@ case 'alive': {
 📥 Media Downloader  
 🎨 Creative Tools & Utilities  
 
-💌 Powered by VENOM-MD MINI BOT 👑
+💌 Powered by 𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 BOT 👑
 `;
 
     const buttons = [
@@ -2101,7 +2102,7 @@ case 'facebook': {
     // load bot name
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'QUEEN ASHA MINI'    // fake contact for quoted card
+    let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈'    // fake contact for quoted card
     const botMention = {
         key: {
             remoteJid: "status@broadcast",
@@ -2113,7 +2114,7 @@ case 'facebook': {
             contactMessage: {
                 displayName: botName,
                 vcard: `BEGIN:VCARD
-VERSION:3.0
+VERSION:1.0
 N:${botName};;;;
 FN:${botName}
 ORG:Meta Platforms
@@ -2259,7 +2260,7 @@ case 'instagram': {
     // load bot name
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'QUEEN ASHA MINI'    // fake contact for quoted card
+    let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈'    // fake contact for quoted card
     const botMention = {
         key: {
             remoteJid: "status@broadcast",
@@ -2416,7 +2417,7 @@ case 'tourl': {
     // load bot name
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'VENOM-MD MINI BOT' // fake contact for quoted card
+    let botName = cfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈' // fake contact for quoted card
     const botMention = {
         key: {
             remoteJid: "status@broadcast",
@@ -2513,7 +2514,7 @@ case 'menu': {
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; }
     catch(e){ console.warn('menu: failed to load config', e); userCfg = {}; }
 
-    const title = userCfg.botName || 'VENOM-MD MINI BOT💫';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 V1💫';
 
     // 🔹 Fake contact for Meta AI mention
     const shonux = {
@@ -2538,32 +2539,41 @@ END:VCARD`
     };
 
     const text = `
-╭─❏ 🤖 BOT STATUS ❏
-│ 👸 ${title}
-│ 👑 Owner : ${config.OWNER_NAME || 'Kavindu • Ishan'}
-│ 🏷️ Ver   : ${config.BOT_VERSION || '0.0001+'}
-│ ☁️ Host  : ${process.env.PLATFORM || 'Heroku'}
-│ ⏱️ Up    : ${hours}h ${minutes}m ${seconds}s
+╭─❏ 🤖 𝐁𝐎𝐓 𝐒𝐓𝐀𝐓𝐔𝐒  ❏
+│ 💥 ${title}
+│ 👑 𝐎𝐰𝐧𝐞𝐫 : ${config.OWNER_NAME || 'ɢᴀɢᴀɴᴀ ᴀɴᴜʜᴀꜱ'}
+│ ✨ 𝐓𝐡𝐚𝐧𝐤𝐬 𝐭𝐨 : {'ᴄʜᴀᴍᴏᴅ ᴅᴇᴠ'}
+│  🪶 𝐕𝐞𝐫   : ${config.BOT_VERSION || '0.0001+'}
+│ ☁️ 𝐇𝐨𝐬𝐭 𝐛𝐲   : ${process.env.PLATFORM || 'Rendar'}
+│ ⏱️𝐑𝐮𝐧 𝐓𝐢𝐦𝐞  : ${hours}h ${minutes}m ${seconds}s
 ╰────────❏
 
-📝 *Description*  
-✨ Fast • Simple • Powerful  
-📥 Media Downloader  
-🎨 Creative Tools  
-🔧 Smart Utilities  
+*🪐ᗪESᑕᖇIᑭTIOᑎ*
 
-> © ${config.BOT_FOOTER || 'VENOM-MD MINI BOT✨🍃'}
+'✨ fαѕт • ѕιмρℓє • ρσωєяfυℓℓ'
+'📥 мє∂ια ∂σωиℓσα∂єя'
+'🎨 ¢яєαтινє тσσℓѕ'  
+'🔧 ѕмαят υтιℓιтιєѕ'
+'🌝σωи ¢υѕтαмιzαтισи вσт'
+'🗣️иєωѕ υρ∂αтєѕ'
+'👾gяσυρ ¢σммα∂ѕ,мαиαgємєитѕ'
+'🖤ѕтαтυѕ αυтσ ѕєєи αи∂ яєα¢т'
+'💥мαиу α∂ναиѕє∂ fυтυяєѕ'
+'🔮 α∂ναиѕє∂ 𝙰𝙸 ρσωєяє∂ ѕуѕтєм'
+'🛡 ѕє¢υяє & яєℓιαвℓє' 
+
+> © ${config.BOT_FOOTER || '𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚍 𝚋𝚢 𝙶𝚊𝚐𝚊𝚗𝚊 𝙰𝚗𝚞𝚑𝚊𝚜✨🍃'}
 `.trim();
 
     const buttons = [
-      { buttonId: `${config.PREFIX}download`, buttonText: { displayText: "📥 DOWNLOAD" }, type: 1 },
-      { buttonId: `${config.PREFIX}creative`, buttonText: { displayText: "🎨 CREATIVE" }, type: 1 },
-      { buttonId: `${config.PREFIX}tools`, buttonText: { displayText: "🔧 TOOLS" }, type: 1 },
-      { buttonId: `${config.PREFIX}settings`, buttonText: { displayText: "⚙️ SETTINGS" }, type: 1 },
-      { buttonId: `${config.PREFIX}owner`, buttonText: { displayText: "👑 OWNER" }, type: 1 }
+      { buttonId: `${config.PREFIX}download`, buttonText: { displayText: "📥 dσwnlσαd" }, type: 1 },
+      { buttonId: `${config.PREFIX}creative`, buttonText: { displayText: "🎨 crєαtívє" }, type: 1 },
+      { buttonId: `${config.PREFIX}tools`, buttonText: { displayText: "🔧 tσσlѕ" }, type: 1 },
+      { buttonId: `${config.PREFIX}settings`, buttonText: { displayText: "⚙️ ѕєttíngѕ" }, type: 1 },
+      { buttonId: `${config.PREFIX}owner`, buttonText: { displayText: "👑 σwnєr" }, type: 1 }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/fnuywi.jpg';
+    const defaultImg = 'https://files.catbox.moe/d6afvt.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // build image payload (url or buffer)
@@ -2576,7 +2586,7 @@ END:VCARD`
     await socket.sendMessage(sender, {
       image: imagePayload,
       caption: text,
-      footer: "VENOM-MD MINI BOT🍃",
+      footer: "𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 𝐕𝟏 🍃",
       buttons,
       headerType: 4
     }, { quoted: shonux });
@@ -2668,7 +2678,7 @@ case 'creative': {
   try {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'VENOM-MD MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 𝐕𝟏 AI';
 
     const shonux = {
         key: {
@@ -2736,7 +2746,7 @@ case 'tools': {
   try {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'VENOM-MD MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 𝐕𝟏 BOT AI';
 
     const shonux = {
         key: {
@@ -2817,7 +2827,7 @@ case 'settings': {
   try {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'VENOM-MD MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 𝐕𝟏 BOT AI';
 
     const shonux = {
         key: {
@@ -2882,7 +2892,7 @@ case 'owner': {
   try {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'VENOM-MD MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 𝐕𝟏 AI';
 
     const shonux = {
         key: {
@@ -2908,11 +2918,11 @@ END:VCARD`
     const text = `
 ╭───❏ *OWNER INFO* ❏
 │ 
-│ 👑 *Name*: Kavindu & Ishan 
-│ 📞 *Contact*: +94 77 005 1298
+│ 👑 𝐍𝐚𝐦𝐞 : 𝐆𝐚𝐠𝐚𝐧𝐚 𝐚𝐧𝐮𝐡𝐚𝐬 
+│ 📞 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 :+94 71 304 7504 , +94 70 113 8566
 │
-│ 💬 *For support or queries*
-│ contact the owner directly
+│ '💬 𝙵𝚘𝚛 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚘𝚛 𝚚𝚞𝚎𝚛𝚒𝚎𝚜'
+│ '𝙲𝚘𝚗𝚝𝚊𝚌𝚝 𝚘𝚠𝚗𝚎𝚛 𝚍𝚒𝚛𝚎𝚌𝚝𝚕𝚢'
 │ 
 ╰───────────────❏
 `.trim();
@@ -3223,7 +3233,7 @@ END:VCARD` } }
   if (!jid) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW" },
@@ -3240,7 +3250,7 @@ END:VCARD` } }
   if (!(isOwner || isAdmin)) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 BOT AI';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW2" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -3251,7 +3261,7 @@ END:VCARD` } }
   if (!jid.endsWith('@newsletter')) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW3" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -3267,7 +3277,7 @@ END:VCARD` } }
 
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 BOT AI';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW4" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -3278,7 +3288,7 @@ END:VCARD` } }
     console.error('unfollow error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 BOT AI';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW5" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4131,7 +4141,7 @@ case 'newslist': {
     if (!docs || docs.length === 0) {
       let userCfg = {};
       try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-      const title = userCfg.botName || 'NIKKA MINI BOT AI';
+      const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
       const shonux = {
           key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_NEWSLIST" },
           message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4157,7 +4167,7 @@ case 'newslist': {
     console.error('newslist error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_NEWSLIST3" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4176,7 +4186,7 @@ case 'cid': {
     // ✅ Dynamic botName load
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'NIKKA MINI BOT AI';
+    let botName = cfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
 
     // ✅ Fake Meta AI vCard (for quoted msg)
     const shonux = {
@@ -4274,22 +4284,22 @@ case 'owner': {
     // vCard with multiple details
     let vcard = 
       'BEGIN:VCARD\n' +
-      'VERSION:3.0\n' +
-      'FN:NIKKA\n' + // Name
-      'ORG:WhatsApp Bot Developer;\n' + // Organization
-      'TITLE:Founder & CEO of Queen Asha Mini Bot;\n' + // Title / Role
-      'EMAIL;type=INTERNET:queenasha@gmail.com\n' + // Email
-      'ADR;type=WORK:;;Mtara;;Sri Lanka\n' + // Address
-      'URL:https://github.com\n' + // Website
-      'TEL;type=CELL;type=VOICE;waid=94770051298\n' + // WhatsApp Number
-      'TEL;type=CELL;type=VOICE;waid=94764040298\n' + // Second Number (Owner)
+      'VERSION:1.0\n' +
+      'FN:𝐀𝐔𝐑𝐀\n' + // 𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈
+      'ZANE XD:GAGANA ANUHAS;\n' + // ZANE XD
+      'TITLE:Founder & CEO of 𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈/8/8/8/8/8/8/8/8/8;\n' + // gagana anuhas
+      'EMAIL;type=INTERNET:gaganaanuhas222@gmail.com\n' + // gaganaanuhas222@gmail.com
+      'ADR;type=WORK:;;kagalla;;Sri Lanka\n' + // kagalla,sri lanka
+      'URL:https://github.com\n' + // https://github.com/Gagana523
+      'TEL;type=CELL;type=VOICE;waid=94713047504\n' + // 94713047504
+      'TEL;type=CELL;type=VOICE;waid=94701138566\n' + // 94701138566
       'END:VCARD';
 
     await conn.sendMessage(
       m.chat,
       {
         contacts: {
-          displayName: 'KAVINDU',       contacts: [{ vcard }]
+          displayName: 'ANUHAS',       contacts: [{ vcard }]
         }
       },
       { quoted: m }
@@ -4306,7 +4316,7 @@ case 'addadmin': {
   if (!args || args.length === 0) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN" },
@@ -4320,7 +4330,7 @@ case 'addadmin': {
   if (!isOwner) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN2" },
@@ -4335,7 +4345,7 @@ case 'addadmin': {
 
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN3" },
@@ -4347,7 +4357,7 @@ case 'addadmin': {
     console.error('addadmin error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN4" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4518,7 +4528,7 @@ case 'deladmin': {
   if (!isOwner) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || 'NIKKA MINI BOT AI';
+    const title = userCfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI';
 
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_DELADMIN2" },
@@ -4652,7 +4662,7 @@ case 'setlogo': {
 case 'jid': {
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     const cfg = await loadUserConfigFromMongo(sanitized) || {};
-    const botName = cfg.botName || 'NIKKA MINI BOT AI'; // dynamic bot name
+    const botName = cfg.botName || '𝐀𝐔𝐑𝐀 𝐌𝐈𝐍𝐈 AI'; // dynamic bot name
 
     const userNumber = sender.split('@')[0]; 
 
@@ -5084,7 +5094,7 @@ async function EmpirePair(number, res) {
           await delay(4000);
 
           const updatedCaption = formatMessage(useBotName,
-            `✅ සාර්ථකව සම්බන්ධ වී, දැන් ක්‍රියාත්මකයි!\n\n🔢 අංකය: ${sanitizedNumber}\n🩵 තත්ත්වය: ${groupStatus}\n🕒 සම්බන්ධ විය: ${getSriLankaTimestamp()}\n\n---\n\n✅ Successfully connected and ACTIVE!\n\n🔢 Number: ${sanitizedNumber}\n🩵 Status: ${groupStatus}\n🕒 Connected at: ${getSriLankaTimestamp()}`,
+            `✅ AURA MD MINI BOT V1 සාර්ථකව සම්බන්ධ වී ඇත.දැන් ක්‍රියාත්මකයි....💫🫶!\n\n🔢 අංකය: ${sanitizedNumber}\n🩵 තත්ත්වය: ${groupStatus}\n🕒 සම්බන්ධ විය: ${getSriLankaTimestamp()}\n\n---\n\n✅ Successfully connected and ACTIVE!\n\n🔢 Number: ${sanitizedNumber}\n🩵 Status: ${groupStatus}\n🕒 Connected at: ${getSriLankaTimestamp()}`,
             useBotName
           );
 
