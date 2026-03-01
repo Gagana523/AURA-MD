@@ -3,59 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA MD - V1 FINAL</title>
+    <title>AURA MD - V1 FINAL QUALITY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Share+Tech+Mono&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
     <style>
         :root { --blue: #00f2ff; --purple: #9d00ff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
         body { background: #000; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; color: #fff; }
 
-        /* 1. INTRO - හරියටම මැදට */
+        /* INTRO */
         #intro-screen {
             position: fixed; inset: 0; background: #000; z-index: 9999;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: opacity 1s ease;
         }
-        .intro-logo {
-            width: 140px; height: 140px; border-radius: 50%;
-            border: 3px solid var(--blue); box-shadow: 0 0 30px var(--blue);
-            animation: pulse 2s infinite; margin-bottom: 20px;
-        }
+        .intro-logo { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--blue); box-shadow: 0 0 30px var(--blue); animation: pulse 2s infinite; margin-bottom: 20px; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .intro-text { font-size: 26px; letter-spacing: 10px; text-shadow: 0 0 15px var(--blue); font-weight: 900; }
+        .intro-text { font-size: 24px; letter-spacing: 10px; text-shadow: 0 0 15px var(--blue); font-weight: 900; }
 
-        /* Background Matrix */
         #matrix-canvas { position: fixed; inset: 0; z-index: -1; opacity: 0.3; }
 
-        /* Main UI - පස්සේ පේන්න හදන්නේ */
-        #main-container {
-            display: none; flex-direction: column; align-items: center; 
-            width: 100%; opacity: 0; transition: opacity 1s ease;
-        }
+        /* MAIN UI */
+        #main-container { display: none; flex-direction: column; align-items: center; width: 100%; opacity: 0; transition: opacity 1s ease; }
 
-        /* NEON CARD */
-        .neon-box {
-            position: relative; width: min(90%, 360px); padding: 3px;
-            background: linear-gradient(45deg, var(--blue), var(--purple));
-            border-radius: 30px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
-        }
-        .glass-card {
-            background: #0a0a0a; border-radius: 27px; padding: 30px 20px; text-align: center;
-        }
+        .neon-box { position: relative; width: min(90%, 360px); padding: 3px; background: linear-gradient(45deg, var(--blue), var(--purple)); border-radius: 30px; }
+        .glass-card { background: #0a0a0a; border-radius: 27px; padding: 30px 20px; text-align: center; }
         .card-logo { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blue); margin-bottom: 15px; }
 
-        /* Inputs */
-        .input-box {
-            width: 100%; padding: 14px; background: #1a1a1a; border: 1px solid #333;
-            border-radius: 12px; color: #fff; text-align: center; margin-bottom: 15px; outline: none;
-        }
-        .get-btn {
-            width: 100%; padding: 14px; background: var(--blue); border: none;
-            border-radius: 12px; font-weight: 900; cursor: pointer; color: #000;
-        }
-        #pair-result { margin-top: 15px; font-size: 24px; font-weight: 900; color: var(--blue); letter-spacing: 5px; }
+        .input-box { width: 100%; padding: 14px; background: #1a1a1a; border: 1px solid #333; border-radius: 12px; color: #fff; text-align: center; margin-bottom: 15px; outline: none; font-size: 16px; }
+        .get-btn { width: 100%; padding: 14px; background: var(--blue); border: none; border-radius: 12px; font-weight: 900; cursor: pointer; color: #000; margin-bottom: 10px; }
+        .about-btn { background: none; border: 1px solid rgba(0, 242, 255, 0.4); color: var(--blue); padding: 8px 20px; border-radius: 20px; font-size: 11px; cursor: pointer; letter-spacing: 2px; }
+
+        /* MODAL / ABOUT SCREEN */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        .modal-content { width: min(92%, 450px); background: #080808; border: 1px solid var(--blue); border-radius: 20px; padding: 30px; position: relative; max-height: 80vh; overflow-y: auto; }
+        .close-modal { position: absolute; top: 15px; right: 15px; color: var(--blue); cursor: pointer; font-size: 24px; }
+        
+        #typewriter-content { font-family: 'Share Tech Mono', monospace; font-size: 13px; line-height: 1.7; text-align: left; }
+        .special-font { font-family: 'Dancing Script', cursive; font-size: 22px; color: var(--purple); display: block; margin: 10px 0; }
+        .feature-title { color: var(--blue); font-weight: bold; margin-top: 12px; display: block; }
+
+        #pair-result { margin-top: 15px; font-size: 24px; font-weight: 900; color: var(--blue); letter-spacing: 5px; text-shadow: 0 0 10px var(--blue); }
     </style>
 </head>
 <body>
@@ -72,11 +61,19 @@
         <div class="neon-box">
             <div class="glass-card">
                 <img src="https://files.catbox.moe/317h3c.png" class="card-logo">
-                <p style="font-size:10px; color:var(--blue); margin-bottom:15px;">V1 PAIRING INTERFACE</p>
+                <p style="font-size:10px; color:var(--blue); margin-bottom:15px; letter-spacing:1px">PAIRING INTERFACE V2.0</p>
                 <input type="number" id="number" class="input-box" placeholder="947xxxxxxxx">
                 <button class="get-btn" id="submitBtn">GET CODE</button>
+                <button class="about-btn" onclick="openModal()">ABOUT BOT</button>
                 <div id="pair-result"></div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="typewriter-content"></div>
         </div>
     </div>
 
@@ -97,7 +94,7 @@
         }
         init(); setInterval(draw, 50);
 
-        // Intro Transition - Render වලට 100% වැඩ කරන විදිහට
+        // Intro Transition
         window.onload = () => {
             setTimeout(() => {
                 const intro = document.getElementById('intro-screen');
@@ -111,13 +108,41 @@
             }, 5000);
         };
 
+        // About Typewriter Logic
+        const lines = [
+            { t: "Hello, Welcome to AURA-MD V1", c: "" },
+            { t: "Developed by Gagana Anuhas", c: "special-font" },
+            { t: "--- BOT FEATURES ---", c: "feature-title" },
+            { t: "✨ Fast & Powerful System", c: "" },
+            { t: "📥 Multi-Media Downloader", c: "" },
+            { t: "🛡️ Secure & Reliable Connection", c: "" },
+            { t: "🎨 Custom Branding Support", c: "" },
+            { t: "🚀 V1 Ultimate Pairing UI", c: "" }
+        ];
+
+        function openModal() {
+            document.getElementById('modalOverlay').style.display = 'flex';
+            document.getElementById('typewriter-content').innerHTML = "";
+            startType(0);
+        }
+        function startType(i) {
+            if (i >= lines.length) return;
+            const d = document.createElement('div'); if(lines[i].c) d.className = lines[i].c;
+            document.getElementById('typewriter-content').appendChild(d);
+            let cIdx = 0;
+            const term = setInterval(() => {
+                d.textContent += lines[i].t[cIdx]; cIdx++;
+                if(cIdx >= lines[i].t.length){ clearInterval(term); setTimeout(()=>startType(i+1), 200); }
+            }, 40);
+        }
+        function closeModal() { document.getElementById('modalOverlay').style.display = 'none'; }
+
         // GET CODE LOGIC
         document.getElementById("submitBtn").addEventListener("click", async () => {
             const num = document.getElementById("number").value;
             const res = document.getElementById("pair-result");
             if(!num) { res.innerHTML = "ENTER NUMBER!"; return; }
             res.innerHTML = "WAIT...";
-            
             try {
                 const response = await fetch(`/code?number=${num}`);
                 const data = await response.json();
