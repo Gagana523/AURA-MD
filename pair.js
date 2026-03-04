@@ -27,7 +27,7 @@ const {
 
 // ---------------- CONFIG ----------------
 
-const BOT_NAME_FANCY = '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 𝐕𝟏|𝐁𝐲 𝐆𝐚𝐠𝐚𝐧𝐚|';
+const BOT_NAME_FANCY = '𝐀𝐔𝐑𝐀-𝐌𝐈𝐍𝐈 𝐕𝟏✨|𝐁𝐲 𝐆𝐚𝐠𝐚𝐧𝐚|';
 
 const config = {
   AUTO_VIEW_STATUS:true,
