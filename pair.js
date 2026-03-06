@@ -588,7 +588,8 @@ END:VCARD`
         console.error('TikTok Search Error:', err);
         await socket.sendMessage(sender, { text: `❌ Error: ${err.message}` }, { quoted: shonux });
     }
-            break;
+    break;
+
     
 
     case 'getdp': {
