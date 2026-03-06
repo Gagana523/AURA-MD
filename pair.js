@@ -598,15 +598,12 @@ END:VCARD`
                 caption: `🎵 ${botName} TikTok Downloader\n\nTitle: ${v.title || 'No Title'}\nAuthor: ${v.author?.nickname || 'Unknown'}`
             }, { quoted: shonux });
         }
-
     } catch (err) {
         console.error('TikTok Search Error:', err);
         await socket.sendMessage(sender, { text: `❌ Error: ${err.message}` }, { quoted: shonux });
     }
-
     break;
 }
-
 
 case 'getdp': {
     try {
@@ -636,24 +633,25 @@ case 'getdp': {
         // 🔹 BotName meta mention
         const metaQuote = {
             key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_GETDP" },
-            message: { contactMessage: { displayName: botName, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${botName};;;;\nFN:${botName}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
+            message: { contactMessage: { displayName: botName, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;${botName};;; \nFN:${botName}\nEND:VCARD` } }
         };
 
-        // 🔹 Send DP with botName meta mention
-        await socket.sendMessage(sender, { 
-            image: { url: ppUrl }, 
-            caption: `🖼 *Profile Picture of* +${q}\nFetched by: ${botName}`,
-            footer: `📌 ${botName} GETDP`,
-            buttons: [{ buttonId: `${config.PREFIX}menu`, buttonText: { displayText: "📋 MENU" }, type: 1 }],
+        // 🔹 Send DP with BotName meta mention and buttons
+        await socket.sendMessage(sender, {
+            image: { url: ppUrl },
+            caption: `📸 *Profile Picture of:* ${q}\n\nFetched by: ${botName}`,
+            footer: `✨ ${botName} GETDP`,
+            buttons: [{ buttonId: `${config.PREFIX}menu`, buttonText: { displayText: "📑 MENU" }, type: 1 }],
             headerType: 4
-        }, { quoted: metaQuote }); // <-- botName meta mention
+        }, { quoted: metaQuote });
 
-    } catch (e) {
-        console.log("❌ getdp error:", e);
+    } catch (err) {
+        console.log("❌ getdp error:", err);
         await socket.sendMessage(sender, { text: "⚠️ Error: Could not fetch profile picture." });
     }
     break;
 }
+
 
 case 'ai':
 case 'chat':
