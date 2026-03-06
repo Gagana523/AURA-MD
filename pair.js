@@ -571,32 +571,18 @@ END:VCARD`
     try {
         await socket.sendMessage(sender, { text: `🔎 Searching TikTok for: ${query}...` }, { quoted: shonux });
 
-        const searchParams = new URLSearchParams({ keywords: query, count: '10', cursor: '0', HD: '1' });
-        const response = await axios.post("https://tikwm.com/api/feed/search", searchParams, {
-            headers: { 'Content-Type': "application/x-www-form-urlencoded; charset=UTF-8", 'Cookie': "current_language=en", 'User-Agent': "Mozilla/5.0" }
-        });
+                const response = await axios.get(`https://api.tiklydown.eu.org/api/download?url=${encodeURIComponent(query)}`);
+        const data = response.data;
 
-        const videos = response.data?.data?.videos;
-        if (!videos || videos.length === 0) {
-            return await socket.sendMessage(sender, { text: '⚠️ No videos found.' }, { quoted: shonux });
+        if (!data || !data.video || !data.video.noWatermark) {
+            return await socket.sendMessage(sender, { text: '❌ Failed to fetch video. API might be down.' }, { quoted: shonux });
         }
 
-        // Limit number of videos to send
-        const limit = 3; 
-        const results = videos.slice(0, limit);
+        await socket.sendMessage(sender, {
+            video: { url: data.video.noWatermark },
+            caption: `🎵 *TikTok Downloader*\n\n📌 *Title:* ${data.title || 'No Title'}\n👤 *Author:* ${data.author?.name || 'Unknown'}\n\nPowered by ${botName}`,
+        }, { quoted: shonux });
 
-        // 🔹 Send videos one by one
-        for (let i = 0; i < results.length; i++) {
-            const v = results[i];
-            const videoUrl = v.play || v.download || null;
-            if (!videoUrl) continue;
-
-            await socket.sendMessage(sender, { text: `⏳ Downloading: ${v.title || 'No Title'}` }, { quoted: shonux });
-
-            await socket.sendMessage(sender, {
-                video: { url: videoUrl },
-                caption: `🎵 ${botName} TikTok Downloader\n\nTitle: ${v.title || 'No Title'}\nAuthor: ${v.author?.nickname || 'Unknown'}`
-            }, { quoted: shonux });
         }
     } catch (err) {
         console.error('TikTok Search Error:', err);
