@@ -572,7 +572,7 @@ END:VCARD`
         await socket.sendMessage(sender, { text: `🔎 Searching TikTok for: ${query}...` }, { quoted: shonux });
 
                 const response = await axios.get(`https://api.tiklydown.eu.org/api/download?url=${encodeURIComponent(query)}`);
-        const data = response.data;
+       const data = response.data;
 
         if (!data || !data.video || !data.video.noWatermark) {
             return await socket.sendMessage(sender, { text: '❌ Failed to fetch video. API might be down.' }, { quoted: shonux });
